@@ -112,7 +112,33 @@
 
 
 </style>
-
+<script>
+    function updateExperience() {
+      // Set the start date to August 2023
+      var startDate = new Date('2023-08-28');
+      
+      // Get the current date
+      var currentDate = new Date();
+      
+      // Calculate the difference in years and months
+      var years = currentDate.getFullYear() - startDate.getFullYear();
+      var months = currentDate.getMonth() - startDate.getMonth();
+      
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+      
+      // Set the updated experience text
+      var experienceText = years + " years " + months + " months";
+      
+      // Update the experience text on the page
+      document.getElementById("experience").textContent = experienceText;
+    }
+    
+    // Call the function when the page loads
+    window.onload = updateExperience;
+  </script>
 
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -221,7 +247,7 @@
 									  <div class="about-info">
 										<p><span class="title-s">Name: </span> <span>Bibek Nepal</span></p>
 										<p><span class="title-s">Job Role: </span> <span>ETL Developer</span></p>
-										<p><span class="title-s">Experience: </span> <span>1 years 5 Months</span></p>
+										<p><span class="title-s">Experience: </span> <span id="experience"></span></p>
 										<p><span class="title-s">Address: </span> <span>Kathmandu, Nepal</span></p>
 									  </div>
 									</div>
